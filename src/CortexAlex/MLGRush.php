@@ -15,8 +15,6 @@ use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\player\EntityDamageByEntityEvent;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;
-use pocketmine\network\mcpe\protocol\LevelEventPacket;
-use pocketmine\network\mcpe\protocol\LevelSoundEventPacket;
 
 class MLGRush extends PluginBase implements Listener {
 	
@@ -33,9 +31,7 @@ class MLGRush extends PluginBase implements Listener {
 		$p->sendPopup("§8[§a+§8] $name");
 		$player->setHealth(20);
 		$player->setFood(20);
-                $volume = mt_rand();
-                $player->getLevel()->broadcastLevelEvent($player, LevelEventPacket::SOUND_LEVELUP, (int) $volume);
-		//Sound Hinzugefugt
+		//Sounds Kommen bald wegen Bug
 		$player->getInventory()->clearAll();
 		$player->getInventory()->getItem(0, Item::get(276, 0, 1)->setCustomName("§6Challanger"));
 		$player->getinventory()->getitem(1, Item::get(144, 0, 1)->setCustomName("§6Stats"));
