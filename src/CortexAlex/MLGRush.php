@@ -34,7 +34,7 @@ class MLGRush extends PluginBase implements Listener {
 		$player->setHealth(20);
 		$player->setFood(20);
                 $volume = mt_rand();
-                $event->getLevel()->broadcastLevelEvent($event, LevelEventPacket::SOUND_LEVELUP, (int) $volume);
+                $player->getLevel()->broadcastLevelEvent($player, LevelEventPacket::SOUND_LEVELUP, (int) $volume);
 		//Sound Hinzugefugt
 		$player->getInventory()->clearAll();
 		$player->getInventory()->getItem(0, Item::get(276, 0, 1)->setCustomName("§6Challanger"));
