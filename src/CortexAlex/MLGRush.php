@@ -19,7 +19,7 @@ use pocketmine\event\block\BlockPlaceEvent;
 class MLGRush extends PluginBase implements Listener {
 	
 	public function onEnable(){
-		$this->getLogger()->info("§cMLG§fRush §aActiver");
+		$this->getLogger()->info("§cMLG§fRush §aist nun Aktiv");
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 	}
 	
@@ -31,12 +31,12 @@ class MLGRush extends PluginBase implements Listener {
 		$p->sendPopup("§8[§a+§8] $name");
 		$player->setHealth(20);
 		$player->setFood(20);
-		//sound kommt noch
+		//Sounds Kommen bald wegen Bug
 		$player->getInventory()->clearAll();
-		$player->getInventory()->getItem(0, Item::get(276, 0, 1)->setCustomName("§6Challenger"));
+		$player->getInventory()->getItem(0, Item::get(276, 0, 1)->setCustomName("§6Challanger"));
 		$player->getinventory()->getitem(1, Item::get(144, 0, 1)->setCustomName("§6Stats"));
-		$player->getInventory()->getItem(8, Item::get(54, 0, 1)->setCustomName("§6Avantages"));
-		$player->getInventory()->getItem(9, Item::get(64, 0, 1)->setCustomName("§cRetour au lobby"));
+		$player->getInventory()->getItem(8, Item::get(54, 0, 1)->setCustomName("§6Erfolge"));
+		$player->getInventory()->getItem(9, Item::get(64, 0, 1)->setCustomName("§cZüruck zur Lobby"));
 		$this->getServer()->loadLevel("MLGLobby");
 		$player->teleport($this->getServer()->getLevelByName("MLGLobby")->getSafeSpawn());
 	}
@@ -58,8 +58,8 @@ class MLGRush extends PluginBase implements Listener {
 			$killer = $causa->getDamager();
 			$kname = $killer->getName();
 			$name = $player->getName();
-			$killer->sendMessage("§aVous avez §2$name §aConteste!");
-			$player->sendMessage("§aVous etiez de §2$kname §aConteste!");
+			$killer->sendMessage("§a§lMine§eBull§7»» §2$name wurde Getotet");
+			$player->sendMessage("§a§lMine§eBull§7»» §2$kname §ahat $name Getotet");
 		}
 	}
 }

@@ -1,6 +1,7 @@
-name: MLGRush v1
-version: 1.0.0
+name: MLGRushV2
+version: 1.0.2
 api: [3.0.0, 4.0.0]
 main: CortexAlex\MLGRush
 author:
 - CortexAlex
+- CrowBaldeYT
